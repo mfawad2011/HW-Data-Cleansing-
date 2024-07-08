@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Creating a 3D scatter plot
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+
+# Plotting undamaged data
+ax.scatter(undamaged_df['Frequency1'], undamaged_df['Frequency2'], undamaged_df['Frequency3'], 
+           c='b', marker='o', label='Undamaged', alpha=0.5)
+
+# Plotting damaged data
+ax.scatter(damaged_df['Frequency1'], damaged_df['Frequency2'], damaged_df['Frequency3'], 
+           c='r', marker='^', label='Damaged', alpha=0.5)
+
+ax.set_xlabel('Frequency 1')
+ax.set_ylabel('Frequency 2')
+ax.set_zlabel('Frequency 3')
+ax.legend()
+ax.set_title('3D Scatter Plot of Frequencies for Undamaged and Damaged Conditions')
+
+plt.show()
